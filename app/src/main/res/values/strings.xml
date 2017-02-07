@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CamTalk</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_id">ID</string>
+    <string name="prompt_password">비밀번호</string>
+    <string name="action_sign_in">로그인</string>
+    <string name="error_invalid_id">ID를 입력해주세요.</string>
+    <string name="error_invalid_password">비밀번호를 입력해주세요.</string>
+    <string name="login_ok">로그인 되었습니다.</string>
+    <string name="login_error">로그인에 실패했습니다.</string>
+    <string name="rsv_default_search_hint">Search</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_hint">Search...</string>
+</resources>

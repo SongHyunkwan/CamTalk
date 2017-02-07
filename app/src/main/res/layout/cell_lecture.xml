@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/ct_light_grey">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tvLecture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ct_black"
+            android:textSize="11sp"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textStyle="normal|bold"
+            android:layout_margin="3dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:weightSum="1">
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tvRoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ct_black"
+            android:textSize="9sp"
+            android:maxLines="1"
+            android:layout_weight="1"
+            android:layout_gravity="bottom|center_vertical|center_horizontal"
+            android:textAlignment="center"
+            android:gravity="bottom|center_vertical" />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tvTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="bottom|center"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textSize="9sp"
+            android:textStyle="normal|bold" />
+
+        <me.grantland.widget.AutofitTextView
+            android:id="@+id/tvProfessor"
+            android:layout_width="wrap_content"
+            android:textColor="@color/ct_black"
+            android:textSize="0sp"
+            android:layout_below="@id/tvRoom"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center" />
+    </LinearLayout>
+
+</LinearLayout>

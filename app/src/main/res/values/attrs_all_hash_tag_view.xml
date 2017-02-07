@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="AllHashTagView">
+        <attr name="type" format="integer" />
+    </declare-styleable>
+</resources>

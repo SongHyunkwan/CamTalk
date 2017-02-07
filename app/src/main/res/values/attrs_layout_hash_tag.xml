@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="LayoutHashTag">
+        <attr name="clickable" format="boolean" />
+        <attr name="countVisible" format="boolean" />
+        <attr name="text" format="string"/>
+        <attr name="count" format="integer"/>
+    </declare-styleable>
+</resources>

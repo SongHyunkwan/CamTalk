@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/ct_purple"
+    tools:context="garmter.com.camtalk.activity.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/textView"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="글쓰기"
+            android:textColor="@color/ct_white"
+            android:gravity="center" /><![CDATA[/
+        >
+
+        ]]>
+
+        <TextView
+            android:id="@+id/btnWrite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:gravity="center"
+            android:text="게시하기"
+            android:textColor="@color/ct_white"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/border_day2"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:layout_weight="1" /></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:padding="8dp"
+        android:background="@drawable/solid_box_white">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="해시 태그를 선택해주세요(최대 3개)"
+            android:gravity="center"
+            android:textColor="@color/ct_black"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:orientation="horizontal">
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:padding="3dp"
+                android:text="#시험어려움"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#절대평가"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#많이읽어야함"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#학점헬"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:orientation="horizontal">
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:padding="3dp"
+                android:text="#개꿀잼"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#참여도중요"/>
+
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#출첵중요"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#유인물사용"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:orientation="horizontal">
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:padding="3dp"
+                android:text="#가산점"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#강의내용좋음"/>
+
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#교재사용"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#팀플많음"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:orientation="horizontal">
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:padding="3dp"
+                android:text="#사람참좋다"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#과제크리"/>
+
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#강의노잼"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#쪽지시험"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="8dp"
+        android:background="@drawable/solid_box_white"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tvAverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ct_black"
+            android:text="총평"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tvDegree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/ct_black"
+            android:text="난이도"
+            android:textSize="18sp"
+            android:layout_below="@id/tvAverage"
+            android:paddingRight="10dp"/>
+
+        <RatingBar
+            android:id="@+id/rbDegree"
+            style="@style/starRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvDegree"
+            android:layout_below="@id/tvAverage"
+            android:isIndicator="false"
+            android:stepSize="0.5"
+            android:layout_above="@+id/etComment" />
+
+        <EditText
+            android:id="@+id/etComment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="코멘트를 작성해주세요"
+            android:layout_below="@id/tvDegree"
+            android:background="@drawable/solid_box_light_grey"
+            android:layout_marginTop="5dp"
+            android:padding="8dp"
+            android:gravity="left"/>
+
+        <RatingBar
+            android:id="@+id/rbAverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:isIndicator="false"
+            android:stepSize="0.5"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/tvDegree"
+            android:layout_above="@+id/tvDegree"
+            style="@style/starRatingBar" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+</LinearLayout>

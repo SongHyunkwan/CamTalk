@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_night"
+    tools:context=".activity.LoginActivity"
+    android:baselineAligned="false"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/ivSchoolLogo"
+        android:layout_width="@dimen/activity_login_logo_size"
+        android:layout_height="@dimen/activity_login_logo_size"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/dk_logo"
+        android:background="@drawable/solid_circle_white"
+        android:scaleType="fitCenter"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="@dimen/activity_login_button_horizontal_padding"
+        android:paddingRight="@dimen/activity_login_button_horizontal_padding"
+        android:layout_below="@id/ivSchoolLogo">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="단국대학교"
+            android:paddingTop="20dp"
+            android:textColor="@color/ct_white"
+            android:paddingBottom="20dp"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnNotice"
+            android:layout_width="154dp"
+            android:layout_height="36dp"
+            android:background="@drawable/border_day2"
+            android:layout_marginBottom="@dimen/activity_login_button_vertical_padding"
+            android:text="학교 공지사항"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/ct_white"/>
+
+        <Button
+            android:id="@+id/btnFood"
+            android:layout_width="154dp"
+            android:layout_height="33dp"
+            android:background="@drawable/border_day2"
+            android:layout_marginBottom="@dimen/activity_login_button_vertical_padding"
+            android:textColor="@color/ct_white"
+            android:layout_gravity="center_horizontal"
+            android:text="식단표"/>
+
+    </LinearLayout>
+
+</LinearLayout>

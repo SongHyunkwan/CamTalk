@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="garmter.com.camtalk.activity.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingRight="9dp"
+        android:paddingLeft="9dp">
+
+        <ImageView
+            android:id="@+id/ivMy"
+            android:src="@drawable/my"
+            android:layout_width="22dp"
+            android:layout_height="22dp" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textColor="@color/ct_white"/>
+
+        <ImageView
+            android:id="@+id/ivAdd"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/img_add"
+            android:layout_margin="8dp"/>
+
+        <ImageView
+            android:id="@+id/ivSetting"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/setting"/>
+    </LinearLayout>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        app:tabIndicatorColor="@color/ct_light_grey"
+        app:tabSelectedTextColor="@color/ct_light_grey"
+        app:tabMode="fixed"
+        app:tabGravity="fill" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tabLayout"
+        android:layout_below="@id/layoutActionBar"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp"/>
+</RelativeLayout>

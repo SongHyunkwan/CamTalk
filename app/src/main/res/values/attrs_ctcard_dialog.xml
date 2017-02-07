@@ -1,0 +1,5 @@
+<resources>
+    <declare-styleable name="CTCardInfoDialog">
+        <attr name="card_string" format="string" />
+    </declare-styleable>
+</resources>

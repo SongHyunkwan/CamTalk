@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ct_purple"
+    android:paddingRight="9dp"
+    android:paddingLeft="9dp"
+    android:paddingBottom="9dp"
+    android:orientation="vertical"
+    tools:context="garmter.com.camtalk.activity.LectureDetailActivity">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/ct_white"
+        android:text="강의제목"
+        android:gravity="center"/>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/solid_box_white"
+        android:padding="9dp">
+
+        <TextView
+            android:id="@+id/tvLavel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="교수"
+            android:textColor="@color/ct_black"
+            android:paddingRight="18dp"/>
+
+        <TextView
+            android:id="@+id/tvProfessor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvLavel"
+            android:text="신원용"
+            android:textColor="@color/ct_black"/>
+
+        <View
+            android:id="@+id/viewMidLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/ct_light_grey"
+            android:layout_below="@id/tvLavel"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+
+        <LinearLayout
+            android:id="@+id/layoutAverage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/viewMidLine"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:id="@+id/tvAverage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="총점"
+                android:paddingRight="7.5dp"
+                android:textColor="@color/ct_black"/>
+
+            <RatingBar
+                android:id="@+id/rbAverage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/starRatingBar2"
+                android:isIndicator="true" />
+
+            <TextView
+                android:id="@+id/tvDegree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="난이도"
+                android:paddingLeft="20dp"
+                android:paddingRight="7.5dp"
+                android:textColor="@color/ct_black"/>
+
+            <RatingBar
+                android:id="@+id/rbDegree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/starRatingBar2"
+                android:isIndicator="true"
+                android:layout_marginRight="15dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgHashTag"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/img_hashtag"
+            android:paddingRight="3dp"
+            android:layout_below="@id/layoutAverage"/>
+
+        <TextView
+            android:id="@+id/tvTags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layoutAverage"
+            android:layout_toRightOf="@id/imgHashTag"
+            android:textColor="@color/ct_black"
+            android:includeFontPadding="true"
+            android:lineSpacingExtra="4dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:layout_marginBottom="10dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/img_find"
+            android:visibility="gone"/>
+
+        <ToggleButton
+            android:id="@+id/tbSwitch"
+            android:layout_width="125dp"
+            android:background="@drawable/toggle_comment_data"
+            android:layout_centerHorizontal="true"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            android:layout_alignParentTop="true"
+            android:layout_height="27dp" />
+
+        <ImageView
+            android:id="@+id/ivWrite"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/img_write"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvComment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="9dp"
+        android:background="@drawable/solid_box_white">
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="9dp"
+        android:background="@drawable/solid_box_white">
+    </android.support.v7.widget.RecyclerView>
+</LinearLayout>

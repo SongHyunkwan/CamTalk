@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/solid_box_white"
+    android:gravity="center"
+    android:paddingTop="17dp"
+    android:paddingBottom="17dp"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/ct_black"
+        android:text="제목"/>
+
+    <EditText
+        android:id="@+id/etTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/ct_black"
+        android:minLines="2"
+        android:hint="카드 제목을 작성해주세요."
+        android:textColorHint="@color/ct_dark_grey"
+        android:background="@drawable/solid_box_light_grey"
+        android:padding="5dp"
+        android:imeActionId="@+id/updateMemo"
+        android:imeActionLabel="저장"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp">
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="삭제하기"
+            android:background="@drawable/stroke_box_white"/>
+
+        <View android:layout_width="5dp"
+            android:layout_height="match_parent"/>
+        <Button
+            android:id="@+id/btnName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            android:background="@drawable/stroke_box_white"/>
+    </LinearLayout>
+</LinearLayout>

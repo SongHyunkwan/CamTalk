@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_night"
+    tools:context=".activity.LoginActivity"
+    android:baselineAligned="false"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/ivSchoolLogo"
+        android:layout_width="@dimen/activity_login_logo_size"
+        android:layout_height="@dimen/activity_login_logo_size"
+        android:layout_marginBottom="100dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/dk_logo"
+        android:background="@drawable/solid_circle_white"
+        android:scaleType="fitCenter"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="@dimen/activity_login_button_horizontal_padding"
+        android:paddingRight="@dimen/activity_login_button_horizontal_padding"
+        android:gravity="right"
+        android:layout_below="@id/ivSchoolLogo">
+
+        <EditText
+            android:id="@+id/etId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/prompt_id"
+            android:padding="9dp"
+            android:textColorHint="@color/ct_white"
+            android:textColor="@color/ct_white"
+            android:background="@drawable/border_day2"
+            android:layout_marginBottom="@dimen/activity_login_button_vertical_padding"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/prompt_password"
+            android:padding="9dp"
+            android:textColorHint="@color/ct_white"
+            android:background="@drawable/border_day2"
+            android:layout_marginBottom="@dimen/activity_login_button_vertical_padding"
+            android:textColor="@color/ct_white"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/action_sign_in"
+            android:background="@drawable/border_day2"
+            android:textColor="@color/ct_white"
+            android:padding="5dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Tip : 수강신청을 하시면 자동 로그인 됩니다."
+            android:paddingTop="20dp"
+            android:textColor="@color/ct_white"
+            android:paddingBottom="20dp"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressBar"
+        android:visibility="gone"/>
+
+</RelativeLayout>

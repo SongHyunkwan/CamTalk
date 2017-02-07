@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ct_purple"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="garmter.com.camtalk.activity.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/layoutActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="9dp"
+        android:paddingRight="9dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/ct_white"
+            android:text="글쓰기"/>
+
+        <TextView
+            android:id="@+id/tvWrite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="완료하기"
+            android:textColor="@color/ct_white"
+            android:padding="5dp"
+            android:background="@drawable/stroke_box_alpha_white"/>
+
+    </RelativeLayout>
+
+    <ToggleButton
+        android:id="@+id/tbSwitch"
+        android:layout_width="125dp"
+        android:layout_height="30dp"
+        android:textColor="@color/ct_white"
+        android:background="@drawable/toggle_front_back"
+        android:textOn=""
+        android:textOff=""
+        android:layout_below="@id/layoutActionBar"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:layout_width="39dp"
+        android:layout_height="30dp"
+        android:layout_below="@id/layoutActionBar"
+        android:src="@drawable/ic_launcher"
+        android:layout_alignParentRight="true"
+        android:id="@+id/ivPpt"
+        android:paddingRight="9dp"/>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        app:tabIndicatorColor="@color/ct_light_grey"
+        app:tabSelectedTextColor="@color/ct_light_grey"
+        app:tabTextColor="@color/ct_white"
+        app:tabMode="scrollable"
+        app:tabGravity="fill" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tbSwitch"
+        android:layout_above="@id/tabLayout"
+        android:padding="9dp">
+
+        <EditText
+            android:id="@+id/etCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/solid_box_white"
+            android:hint="카드를 써주세요."
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/ivCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"/>
+    </RelativeLayout>
+</RelativeLayout>
