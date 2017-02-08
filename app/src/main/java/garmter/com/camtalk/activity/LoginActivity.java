@@ -142,7 +142,7 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         public void onSuccess(String msg) {
             showProgress(false);
-            Toast.makeText(LoginActivity.this, "시간표 가져오기 성공", Toast.LENGTH_LONG).show();
+            //Toast.makeText(LoginActivity.this, "시간표 가져오기 성공", Toast.LENGTH_LONG).show();
             LoginUtil loginUtil = new LoginUtil();
             loginUtil.setUserId(LoginActivity.this, mId);
 

@@ -87,6 +87,25 @@ public class LectureDetailActivity extends AppCompatActivity {
         initComment();
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        initView();
+        initClass();
+        mPage=1;
+        initComment();
+
+    }
+
+    @Override
+    public void recreate() {
+        super.recreate();
+        initView();
+        initClass();
+        mPage=1;
+        initComment();
+    }
+
     private void initView() {
 
         tvTitle = (TextView) findViewById(R.id.tvTitle);
@@ -122,13 +141,11 @@ public class LectureDetailActivity extends AppCompatActivity {
 
     private void initClass() {
         mLectureId = getIntent().getStringExtra(CTActivityUtil.KEY_LECTURE_ID);
-        Log.v("ID", "mLectureId = "+ mLectureId);
         if (mLectureId != null && mLectureId.length() > 0) {
 
             LectureDB db = new LectureDB(LectureDetailActivity.this);
             db.open();
             DKClass dkClass = db.getDkClass(mLectureId);
-            Log.v("ID", "dkClass = "+ dkClass);
             mLectureName = getIntent().getStringExtra(CTActivityUtil.KEY_LECTURE_NAME);
             if (dkClass != null && dkClass.getLecture() != null) {
                 tvTitle.setText(dkClass.getLecture());
@@ -137,13 +154,10 @@ public class LectureDetailActivity extends AppCompatActivity {
             mLectureName=tvTitle.getText().toString();
 
             mProfName = getIntent().getStringExtra(CTActivityUtil.KEY_LEC_PROF);
-            Log.v("ID", "mLectureName1 = "+ mLectureName + " mProfName = " + mProfName);
             if (dkClass != null && dkClass.getProfessor() != null) {
                 tvProfessor.setText(dkClass.getProfessor());
                 //mProfName = tvProfessor.getText().toString();
             }
-            mProfName = tvProfessor.getText().toString();
-            Log.v("ID", "mLectureName2 = "+ mLectureName + " mProfName = " + mProfName);
             db.close();
         }
 
@@ -169,8 +183,9 @@ public class LectureDetailActivity extends AppCompatActivity {
         if (mLectureId != null && mLectureId.length() > 0) {
             NetworkUtil networkUtil = new NetworkUtil();
 
+            System.out.println("확인확인확인 : "+mLectureId+" : "+mProfName+" : "+mPage);
+            networkUtil.requestLectureDetail(LectureDetailActivity.this, mLectureId, mProfName, mPage, onNetworkCallback);
 
-            networkUtil.requestLectureDetail(LectureDetailActivity.this, mLectureId, mPage, onNetworkCallback);
         }
     }
 
@@ -187,8 +202,7 @@ public class LectureDetailActivity extends AppCompatActivity {
                     break;
                 case R.id.ivWrite:
                     CTActivityUtil activityUtil = new CTActivityUtil();
-                    Log.v("Test","startWriteCommentActivity/" + "mLectureId = " + mLectureId + " mLectureName = " + mLectureName + "mProfName = " +mProfName);
-                    activityUtil.startWriteCommentActivity(LectureDetailActivity.this, mLectureId, mLectureName, mProfName);
+                    activityUtil.startWriteCommentActivity(LectureDetailActivity.this, mLectureId, tvTitle.getText().toString(), tvProfessor.getText().toString());
                     break;
             }
         }
@@ -225,14 +239,12 @@ public class LectureDetailActivity extends AppCompatActivity {
                             jump += 1;
                         }
                         count += 1;
-
-                        Log.v("TAG","tag = " + tag + "tags[i] = " + tags[i] + "item.tag_count[i] = " + item.tag_count[i]);
                     }
-                    Log.v("TAG","Total tag = " + tag);
 
                     //SpannableString span = new SpannableString(tag);
 
                     tvTags.setText(tag);
+
                     //error tag
                     if(tvProfessor.getText().toString().equals("신원용"))tvProfessor.setText(item.lec_prof);
                     if(tvTitle.getText().toString().equals("강의제목")) tvTitle.setText(item.lecture_name);

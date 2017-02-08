@@ -88,6 +88,8 @@
             android:textColor="@color/ct_black"
             android:text="몇시간전"
             android:layout_weight="1"
+            android:maxLength="7"
+            android:singleLine="true"
             android:gravity="right"/>
 
     </LinearLayout>

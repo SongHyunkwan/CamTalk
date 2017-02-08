@@ -7,6 +7,7 @@ import android.widget.Toast;
 import java.util.HashMap;
 
 import garmter.com.camtalk.fragment.SearchListFragement;
+import garmter.com.camtalk.fragment.SearchTagFragment;
 import garmter.com.camtalk.utils.CTUtils;
 
 /**
@@ -20,7 +21,7 @@ public class NetworkUtil {
     private String URL_WRITE_COMMENT = "/write/comment.do";
     private String URL_LECTURE_SEARCH="/lecture/search.do";
 
-    public void requestLectureDetail(Context context, String lecture_id, int page, OnNetworkCallback callback) {
+    public void requestLectureDetail(Context context, String lecture_id, String lec_prof, int page, OnNetworkCallback callback) {
         LoginUtil loginUtil = new LoginUtil();
         if ( loginUtil.isLogined(context) ) {
 
@@ -28,6 +29,7 @@ public class NetworkUtil {
 
             HashMap<String, Object> header = new HashMap<>();
             header.put("lecture_id", lecture_id);
+            header.put("lec_prof", lec_prof);
             header.put("user_id", loginUtil.getUserId(context));
             header.put("page", page);
 
@@ -41,6 +43,13 @@ public class NetworkUtil {
     }
 
     public void requestLectureSearch(SearchListFragement context, OnNetworkCallback callback){
+        String url=URL_BASE + URL_LECTURE_SEARCH;
+        NetworkTask networkTask=new NetworkTask();
+        networkTask.setCallback(callback);
+        networkTask.execute(url);
+    }
+
+    public void requestLectureSearch(SearchTagFragment context, OnNetworkCallback callback){
         String url=URL_BASE + URL_LECTURE_SEARCH;
         NetworkTask networkTask=new NetworkTask();
         networkTask.setCallback(callback);

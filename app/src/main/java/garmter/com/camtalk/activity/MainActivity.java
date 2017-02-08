@@ -22,6 +22,7 @@ import android.widget.Toast;
 import garmter.com.camtalk.R;
 import garmter.com.camtalk.db.LectureDB;
 import garmter.com.camtalk.dialog.ClassInfoDialog;
+import garmter.com.camtalk.fragment.BlankFragment;
 import garmter.com.camtalk.fragment.CardListFragment;
 import garmter.com.camtalk.fragment.LectureListFragment;
 import garmter.com.camtalk.fragment.ScheduleFragment;
@@ -32,7 +33,7 @@ import garmter.com.camtalk.utils.CTActivityUtil;
 import garmter.com.camtalk.utils.CTContants;
 
 public class MainActivity extends AppCompatActivity implements ScheduleFragment.OnFragmentInteractionListener,
-        LectureListFragment.OnFragmentInteractionListener, CardListFragment.OnFragmentInteractionListener, ClassInfoDialog.OnButtonClickListener {
+        LectureListFragment.OnFragmentInteractionListener, CardListFragment.OnFragmentInteractionListener, BlankFragment.OnFragmentInteractionListener, ClassInfoDialog.OnButtonClickListener {
 
     TextView tvTitle;
     ImageView ivMy;
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements ScheduleFragment.
                     } else if (viewPager != null && viewPager.getCurrentItem() == CTContants.INDEX_TAB2) {
                         alertDiall();
                     } else if (viewPager != null && viewPager.getCurrentItem() == CTContants.INDEX_TAB3) {
-                        fragmentCard.onClickDeleteButton();
+                        //fragmentCard.onClickDeleteButton();
                     }
                     break;
             }
@@ -125,6 +126,8 @@ public class MainActivity extends AppCompatActivity implements ScheduleFragment.
             } else if (tab.getPosition() == CTContants.INDEX_TAB3) {
                 ivSetting.setImageResource(R.drawable.trash);
                 ivAdd.setVisibility(View.VISIBLE);
+
+                ivAdd.setVisibility(View.GONE);
                 alertDial();
             }
         }
@@ -216,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements ScheduleFragment.
         }
     }
 
-    SearchFragment fragmentSearch;
+    BlankFragment fragmentBalnk;
     LectureListFragment fragmentLecture;
     ScheduleFragment fragmentSchedule;
     CardListFragment fragmentCard;
@@ -233,13 +236,13 @@ public class MainActivity extends AppCompatActivity implements ScheduleFragment.
                 fragmentLecture = new LectureListFragment().newInstance();
                 fragmentSchedule = new ScheduleFragment().newInstance();
                 fragmentCard = new CardListFragment().newInstance();
+                fragmentBalnk=new BlankFragment().newInstance();
             }
         }
 
         @Override
         public Fragment getItem(int position) {
             FragmentTransaction transaction;
-            Log.v("Page","PAGER = " + position + " FragmentLEC = " + fragmentLecture +" FragmentSche = "+fragmentLecture+" fragmentCard = "+fragmentCard);
             switch (position) {
                 case CTContants.INDEX_TAB1:
                     if (fragmentLecture == null) {
@@ -258,13 +261,20 @@ public class MainActivity extends AppCompatActivity implements ScheduleFragment.
                     }
                     return fragmentSchedule;
                 case CTContants.INDEX_TAB3:
-                    if (fragmentCard== null) {
-                        fragmentCard = CardListFragment.newInstance();
+//                    if (fragmentCard== null) {
+//                        fragmentCard = CardListFragment.newInstance();
+//                        transaction = fragmentManager.beginTransaction();
+//                        transaction.add(R.id.fragment_card_list, fragmentCard);
+//                        transaction.commit();
+//                    }
+//                    return fragmentCard;
+                    if (fragmentBalnk== null) {
+                        fragmentBalnk = BlankFragment.newInstance();
                         transaction = fragmentManager.beginTransaction();
-                        transaction.add(R.id.fragment_card_list, fragmentCard);
+                        transaction.add(R.id.fragment_blank, fragmentBalnk);
                         transaction.commit();
                     }
-                    return fragmentCard;
+                    return  fragmentBalnk;
                 default:
                     return null;
             }
@@ -284,7 +294,7 @@ public class MainActivity extends AppCompatActivity implements ScheduleFragment.
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setTitle("알림").setMessage("업데이트 예정입니다.").setNeutralButton("확인", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                onBackPressed();
+                //onBackPressed();
             }
         }).create().show();
     }

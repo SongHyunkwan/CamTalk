@@ -7,6 +7,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -25,7 +26,7 @@ public class IntroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_intro);
-
+        //Log.v("checkPermission","checkPermission = " + checkPermission());
         if (checkPermission()) {
             startActivity();
         } else {
@@ -74,7 +75,10 @@ public class IntroActivity extends AppCompatActivity {
             dialog.setMessage("안내", "시간표와 플래시 카드 읽기 및 쓰기 권한이 필요합니다.", "취소", "승인", new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (dialog != null && dialog.isShowing()) dialog.dismiss();
+                    if (dialog != null && dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
+
                 }
             }, new View.OnClickListener() {
                 @Override
@@ -104,7 +108,7 @@ public class IntroActivity extends AppCompatActivity {
                 && grantResults[0] == PackageManager.PERMISSION_GRANTED
                 && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
             // 권한 허가
-
+            startActivity();
         } else {
             // 권한 거부
             finish();

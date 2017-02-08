@@ -3,6 +3,7 @@ package garmter.com.camtalk.utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import garmter.com.camtalk.activity.CardViewerActivity;
 import garmter.com.camtalk.activity.LectureDetailActivity;
@@ -59,14 +60,17 @@ public class CTActivityUtil {
         if ( lecture_id == null ) lecture_id = "";
         Intent intent = new Intent(context, LectureDetailActivity.class);
         intent.putExtra(KEY_LECTURE_ID, lecture_id);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         context.startActivity(intent);
     }
 
-    public void startLectureDetailActivity(Context context, String lecture_id, String lecture_name) {
+    public void startLectureDetailActivity(Context context, String lecture_id, String lecture_name, String lec_prof) {
         if ( lecture_id == null ) lecture_id = "";
         Intent intent = new Intent(context, LectureDetailActivity.class);
         intent.putExtra(KEY_LECTURE_ID, lecture_id);
         intent.putExtra(KEY_LECTURE_NAME, lecture_name);
+        intent.putExtra(KEY_LEC_PROF, lec_prof);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         context.startActivity(intent);
     }
 

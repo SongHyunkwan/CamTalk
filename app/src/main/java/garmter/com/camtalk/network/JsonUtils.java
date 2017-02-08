@@ -32,6 +32,9 @@ public class JsonUtils {
     private static String KEY_USER_ID = "user_id";
     private static String KEY_LECTURE_NAME="lecture_name";
     private static String KEY_LEC_PROF="lec_prof";
+    private static String KEY_TAG_A="tag_a";
+    private static String KEY_TAG_B="tag_b";
+    private static String KEY_TAG_C="tag_c";
 
     public ArrayList<ItemSearch> getListOfSearchsFromJsonObject(JSONObject obj) throws JSONException{
         ArrayList<ItemSearch> list=new ArrayList<>();
@@ -44,7 +47,10 @@ public class JsonUtils {
             String comment = object.getString(KEY_LEC_COMMENT);
             String lec_prof = object.getString(KEY_LEC_PROF);
             String lecture_id = object.getString(KEY_LECTURE_ID);
-            ItemSearch item = new ItemSearch(lecture_name, timestamp, comment, lec_prof, lecture_id);
+            String tag_a=object.getString(KEY_TAG_A);
+            String tag_b=object.getString(KEY_TAG_B);
+            String tag_c=object.getString(KEY_TAG_C);
+            ItemSearch item = new ItemSearch(lecture_name, timestamp, comment, lec_prof, lecture_id, tag_a, tag_b, tag_c);
             list.add(item);
         }
         return list;

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import garmter.com.camtalk.R;
+import garmter.com.camtalk.fragment.BlankFragment;
 import garmter.com.camtalk.fragment.CardListFragment;
 import garmter.com.camtalk.fragment.LectureListFragment;
 import garmter.com.camtalk.fragment.ScheduleFragment;
@@ -28,7 +29,7 @@ import garmter.com.camtalk.utils.CTContants;
 import garmter.com.camtalk.utils.CTSContants;
 
 
-public class SearchActivity extends AppCompatActivity implements SearchListFragement.OnFragmentInteractionListener, LectureListFragment.OnFragmentInteractionListener, SearchTagFragment.OnFragmentInteractionListener{
+public class SearchActivity extends AppCompatActivity implements SearchListFragement.OnFragmentInteractionListener, LectureListFragment.OnFragmentInteractionListener, SearchTagFragment.OnFragmentInteractionListener, BlankFragment.OnFragmentInteractionListener{
     TextView tvTitle;
     ImageView ivMy;
     ImageView ivSetting;
@@ -123,6 +124,7 @@ public class SearchActivity extends AppCompatActivity implements SearchListFrage
 
     SearchListFragement fragmentSearch;
     SearchTagFragment fragmentTag;
+    BlankFragment fragmentBalnk;
 
     @Override
     public void onFragmentInteraction(Uri uri) {
@@ -139,6 +141,7 @@ public class SearchActivity extends AppCompatActivity implements SearchListFrage
             fragmentManager=fm;
             fragmentSearch=new SearchListFragement().newInstance();
             fragmentTag=new SearchTagFragment().newInstance();
+            fragmentBalnk=new BlankFragment().newInstance();
 
         }
 
@@ -155,13 +158,20 @@ public class SearchActivity extends AppCompatActivity implements SearchListFrage
                     }
                     return fragmentSearch;
                 case CTSContants.INDEX_TAB2:
-                    if ( fragmentTag == null ) {
-                        fragmentTag = SearchTagFragment.newInstance();
+//                    if ( fragmentTag == null ) {
+//                        fragmentTag = SearchTagFragment.newInstance();
+//                        transaction = fragmentManager.beginTransaction();
+//                        transaction.add(R.id.fragment_search_tag, fragmentTag);
+//                        transaction.commit();
+//                    }
+//                    return fragmentTag;
+                    if ( fragmentBalnk == null ) {
+                        fragmentBalnk = BlankFragment.newInstance();
                         transaction = fragmentManager.beginTransaction();
-                        transaction.add(R.id.fragment_search_tag, fragmentTag);
+                        transaction.add(R.id.fragment_blank, fragmentBalnk);
                         transaction.commit();
                     }
-                    return fragmentTag;
+                    return fragmentBalnk;
                 default:
                     return null;
             }
@@ -177,7 +187,7 @@ public class SearchActivity extends AppCompatActivity implements SearchListFrage
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setTitle("알림").setMessage("업데이트 예정입니다.").setNeutralButton("확인", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                onBackPressed();
+
             }
         }).create().show();
     }

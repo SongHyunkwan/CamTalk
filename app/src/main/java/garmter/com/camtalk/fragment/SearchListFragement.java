@@ -98,8 +98,6 @@ public class SearchListFragement extends Fragment {
         View view=inflater.inflate(R.layout.search, container, false);
         mAdapter=new SearchListRvAdapter(getContext(),null,onItemClickListener);
 
-
-
         realmSearchView = (RealmSearchView)view.findViewById(R.id.search_view);
         realm = Realm.getInstance(getRealmConfig());
         adapter = new SearchRecyclerViewAdapter(getActivity(), realm, "lecture_name");
@@ -156,12 +154,6 @@ public class SearchListFragement extends Fragment {
 
         public void setAis(ArrayList<ItemSearch> list) throws JSONException{
             ais = list;
-            if(jsa != null) {
-                for(int i=0; i<jsa.length(); i++){
-                    jsa.remove(i);
-                    Log.d("제이슨",jsa.toString());
-                }
-            }
                 jsa = new JSONArray();
                 for (int i = 0; i < ais.size(); i++) {
                     JSONObject jo = new JSONObject();
@@ -177,12 +169,6 @@ public class SearchListFragement extends Fragment {
             System.out.println("제이슨어레이2 : "+jsa.length());
             System.out.println("ais사이즈 : "+ais.size());
             notifyDataSetChanged();
-        }
-
-        public JSONArray getAis() throws JSONException {
-
-                return jsa;
-
         }
 
         public class ViewHolder extends RealmSearchViewHolder {

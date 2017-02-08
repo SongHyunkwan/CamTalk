@@ -16,6 +16,9 @@ public class ItemSearch extends RealmObject implements Parcelable{
     public String lec_comment;
     public String lec_prof;
     public String lecture_id;
+    public String tag_a;
+    public String tag_b;
+    public String tag_c;
 
     public ItemSearch(){
 
@@ -23,15 +26,18 @@ public class ItemSearch extends RealmObject implements Parcelable{
 
     public String toString(){
         return "[lecture_name=" + lecture_name + ", lec_timestamp=" + timestamp + ", lec_comment="
-                + lec_comment + ", lec_prof=" + lec_prof + ", lecture_id=" + lecture_id + "]";
+                + lec_comment + ", lec_prof=" + lec_prof + ", lecture_id=" + lecture_id + ", tag_a="+ tag_a + ", tag_b="+ tag_b + ", tag_c="+ tag_c + "]";
     }
 
-    public ItemSearch(String lecture_name, String timestamp, String lec_comment, String lec_prof, String lecture_id){
+    public ItemSearch(String lecture_name, String timestamp, String lec_comment, String lec_prof, String lecture_id, String tag_a, String tag_b, String tag_c){
         this.lecture_name=lecture_name;
         this.timestamp=timestamp;
         this.lec_comment=lec_comment;
         this.lec_prof=lec_prof;
         this.lecture_id=lecture_id;
+        this.tag_a=tag_a;
+        this.tag_b=tag_b;
+        this.tag_c=tag_c;
     }
 
     protected ItemSearch(Parcel in) {
@@ -40,6 +46,27 @@ public class ItemSearch extends RealmObject implements Parcelable{
         lec_comment = in.readString();
         lec_prof = in.readString();
         lecture_id = in.readString();
+        tag_a=in.readString();
+        tag_b=in.readString();
+        tag_c=in.readString();
+    }
+    public String getTag_a(){
+        return tag_a;
+    }
+    public void setTag_a(String tag_a){
+        this.tag_a=tag_a;
+    }
+    public String getTag_b(){
+        return tag_b;
+    }
+    public void setTag_b(String tag_b){
+        this.tag_b=tag_b;
+    }
+    public String getTag_c(){
+        return tag_c;
+    }
+    public void setTag_c(String tag_c){
+        this.tag_a=tag_c;
     }
     public String getLecture_id() {
         return lecture_id;
@@ -97,5 +124,8 @@ public class ItemSearch extends RealmObject implements Parcelable{
         parcel.writeString(lec_comment);
         parcel.writeString(lec_prof);
         parcel.writeString(lecture_id);
+        parcel.writeString(tag_a);
+        parcel.writeString(tag_b);
+        parcel.writeString(tag_c);
     }
 }

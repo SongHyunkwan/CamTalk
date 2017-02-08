@@ -38,13 +38,9 @@
             android:gravity="center"
             android:text="게시하기"
             android:textColor="@color/ct_white"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
             android:background="@drawable/border_day2"
             android:paddingBottom="5dp"
             android:paddingTop="5dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
             android:layout_weight="1" /></LinearLayout>
 
     <LinearLayout
@@ -98,15 +94,7 @@
                 android:padding="3dp"
                 android:text="#많이읽어야함"/>
 
-            <me.grantland.widget.AutofitTextView
-                android:id="@+id/tvTag3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/ct_black"
-                android:background="@drawable/solid_box_light_grey"
-                android:layout_marginLeft="8dp"
-                android:padding="3dp"
-                android:text="#학점헬"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -145,15 +133,7 @@
                 android:padding="3dp"
                 android:text="#출첵중요"/>
 
-            <me.grantland.widget.AutofitTextView
-                android:id="@+id/tvTag7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/ct_black"
-                android:background="@drawable/solid_box_light_grey"
-                android:layout_marginLeft="8dp"
-                android:padding="3dp"
-                android:text="#유인물사용"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -192,15 +172,6 @@
                 android:padding="3dp"
                 android:text="#교재사용"/>
 
-            <me.grantland.widget.AutofitTextView
-                android:id="@+id/tvTag11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/ct_black"
-                android:background="@drawable/solid_box_light_grey"
-                android:layout_marginLeft="8dp"
-                android:padding="3dp"
-                android:text="#팀플많음"/>
         </LinearLayout>
 
         <LinearLayout
@@ -239,17 +210,63 @@
                 android:padding="3dp"
                 android:text="#강의노잼"/>
 
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:orientation="horizontal">
+
             <me.grantland.widget.AutofitTextView
-                android:id="@+id/tvTag15"
+                android:id="@+id/tvTag3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:padding="3dp"
+                android:text="#학점헬"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/ct_black"
                 android:background="@drawable/solid_box_light_grey"
                 android:layout_marginLeft="8dp"
                 android:padding="3dp"
-                android:text="#쪽지시험"/>
+                android:text="#유인물사용"/>
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:layout_marginLeft="8dp"
+                android:padding="3dp"
+                android:text="#팀플많음"/>
+
         </LinearLayout>
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:orientation="horizontal">
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/tvTag15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/ct_black"
+                android:background="@drawable/solid_box_light_grey"
+                android:padding="3dp"
+                android:text="#쪽지시험"/>
+
+        </LinearLayout>
     </LinearLayout>
 
     <RelativeLayout

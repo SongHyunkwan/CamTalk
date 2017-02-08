@@ -6,6 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     tools:context=".activity.IntroActivity"
-    android:background="@mipmap/intro_view">
+    android:background="@mipmap/intro_background_black">
 
 </LinearLayout>
