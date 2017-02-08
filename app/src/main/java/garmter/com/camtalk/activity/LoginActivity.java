@@ -16,6 +16,7 @@ import android.os.AsyncTask;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -65,8 +66,13 @@ public class LoginActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_login);
         // Set up the login form.
+        int maxLengthID = 15;
+        int maxLengthPW = 25;
+
         etId = (EditText) findViewById(R.id.etId);
+        etId.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLengthID)});
         etPassword = (EditText) findViewById(R.id.etPassword);
+        etPassword.setFilters(new InputFilter[] {new InputFilter.LengthFilter(maxLengthPW)});
         etPassword.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {

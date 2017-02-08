@@ -184,6 +184,7 @@ public class MainActivity extends AppCompatActivity implements ScheduleFragment.
 
     @Override
     public void OnRateButtonClick(DKClass dkClass) {
+        Log.v("언제읽힘","언제읽힘");
         if (dkClass != null && dkClass.getCode() != null && dkClass.getCode().length() > 0) {
             CTActivityUtil activityUtil = new CTActivityUtil();
             activityUtil.startLectureDetailActivity(MainActivity.this, dkClass.getCode());
@@ -192,6 +193,7 @@ public class MainActivity extends AppCompatActivity implements ScheduleFragment.
 
     @Override
     public void OnStudyButtonClick(final DKClass dkClass) {
+        Log.v("언제읽힘","언제읽힘1");
         String title = (dkClass != null && dkClass.getLecture() != null) ? dkClass.getLecture() : "";
         if (title.length() > 0) {
             viewPager.setCurrentItem(CTContants.INDEX_TAB3);
@@ -227,15 +229,17 @@ public class MainActivity extends AppCompatActivity implements ScheduleFragment.
             super(fm);
 
             fragmentManager = fm;
-
-            fragmentLecture = new LectureListFragment().newInstance();
-            fragmentSchedule = new ScheduleFragment().newInstance();
-            fragmentCard = new CardListFragment().newInstance();
+            if (fragmentLecture == null) {
+                fragmentLecture = new LectureListFragment().newInstance();
+                fragmentSchedule = new ScheduleFragment().newInstance();
+                fragmentCard = new CardListFragment().newInstance();
+            }
         }
 
         @Override
         public Fragment getItem(int position) {
             FragmentTransaction transaction;
+            Log.v("Page","PAGER = " + position + " FragmentLEC = " + fragmentLecture +" FragmentSche = "+fragmentLecture+" fragmentCard = "+fragmentCard);
             switch (position) {
                 case CTContants.INDEX_TAB1:
                     if (fragmentLecture == null) {
@@ -254,7 +258,7 @@ public class MainActivity extends AppCompatActivity implements ScheduleFragment.
                     }
                     return fragmentSchedule;
                 case CTContants.INDEX_TAB3:
-                    if (fragmentCard == null) {
+                    if (fragmentCard== null) {
                         fragmentCard = CardListFragment.newInstance();
                         transaction = fragmentManager.beginTransaction();
                         transaction.add(R.id.fragment_card_list, fragmentCard);
@@ -280,6 +284,7 @@ public class MainActivity extends AppCompatActivity implements ScheduleFragment.
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setTitle("알림").setMessage("업데이트 예정입니다.").setNeutralButton("확인", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
+                onBackPressed();
             }
         }).create().show();
     }

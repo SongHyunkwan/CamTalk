@@ -3,6 +3,7 @@ package garmter.com.camtalk.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.RatingBar;
@@ -151,7 +152,7 @@ public class WriteCommentActivity extends AppCompatActivity {
 
                     NetworkUtil networkUtil = new NetworkUtil();
                     networkUtil.requestWriteComment(WriteCommentActivity.this, mLectureId, mLectureName, mLecProf, getTagInfo(), rbRate.getRating(), rbEasy.getRating(), etComment.getText().toString(), onNetworkCallback);
-
+                    Log.v("Write","Write mLectureId = " + mLectureId + " mLectureName = " + mLectureName + " mLecProf = " +mLecProf);
                     break;
                 default:
                     break;

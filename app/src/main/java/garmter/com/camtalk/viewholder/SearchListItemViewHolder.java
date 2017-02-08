@@ -1,6 +1,7 @@
 package garmter.com.camtalk.viewholder;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -39,6 +40,7 @@ public class SearchListItemViewHolder extends RecyclerView.ViewHolder {
             layoutContainer.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Log.v("Search","Search -> Detail = " + code );
                     onItemClickListener.onItemClicked(code);
                 }
             });

@@ -177,6 +177,7 @@ public class SearchActivity extends AppCompatActivity implements SearchListFrage
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setTitle("알림").setMessage("업데이트 예정입니다.").setNeutralButton("확인", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
+                onBackPressed();
             }
         }).create().show();
     }
